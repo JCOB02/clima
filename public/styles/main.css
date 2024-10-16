@@ -1,0 +1,142 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav {
+    display: block;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px
+}
+
+.card {
+    flex: 1 1 30%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* padding: 20px; */
+    background-color: #f9f9f9;
+}
+
+p{
+    color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+} 
+
+#map {
+    margin-top: 20px;
+} 
+
+
+.nav {
+    display: block;
+}
+
+body{
+    width: 100vw;
+    background-image: url(./Images/Designer.jpeg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow-x: hidden;
+    background-size: 100vw 100vh;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}
+
+.container-info{
+    width: 100vw !important;
+}
+
+.card {
+    flex: 1 1 30%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* padding: 20px; */
+    background-color: #f9f9f9;
+}
+
+p{
+    color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+} 
+
+#map {
+    margin-top: 20px;
+} 
+
+.blur-effect{
+    background-color: rgba(9, 3, 3, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.sombra{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.447);
+}
+
+.row{
+    width: 100vw !important;
+}
+
+.temperatura-actual{
+    transition: all 500ms;
+    position: relative;
+    display: inline-block;
+    
+
+}
+
+.tooltipTxt{
+    visibility: hidden;
+    color: #f9f9f9;
+    position: absolute;
+    width: 120px;
+    z-index: 1;
+    top: -5px;
+    left: 120%;
+}
+
+
+.temperatura-actual:hover{
+    transform: scale(1.2);
+}
+
+.temperatura-actual:hover .tooltipTxt{
+    visibility: visible;
+}
+
+.info-clima{
+    list-style: none;
+}
+
+
+.info-clima > li {
+    display: inline-block;
+}

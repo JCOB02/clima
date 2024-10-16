@@ -1,0 +1,298 @@
+<%- include('../../../../OneDrive/Escritorio/PROJECT_API/views/header.ejs') %>
+<head>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+</head>
+<body>
+    <div class="container container-info position-relative ">
+        <div class="row">
+            <div class="col-12 rounded blur-effect shadow">
+
+                <div class="ciudad-actual">
+                    <h2 class="text-light"><%= weatherItem.name %>, <%= weatherItem.sys.country %></h2>
+                </div>
+                <div class="temperatura-actual">
+                    <h1 class="text-light"><%= weatherItem.main.temp %>°C</h1>
+                </div>
+                <div class="ciudad-actual" >
+                    <h2 class="text-light" id="condicion-actual"><%= weatherItem.weather[0].main %></h2>
+                    <img class="icono-cond-actual" id="condicion-actual-img" alt="">
+                </div>
+                <div class="temperatura-info">
+                    <ul class="">
+                        <li>
+                            <p>Sensación térmica: <%= weatherItem.main.feels_like %>°C</p>
+                        </li>
+                        <li>
+                            <p>tempMin: <%= weatherItem.main.temp_min %></p>
+                        </li>
+                        <li>
+                            <p>tempMax: <%= weatherItem.main.temp_max %></p>
+                        </li>
+                        <li>
+                            <p>humedad: <%= weatherItem.main.humidity %></p>
+                        </li>
+                        <li>
+                            <p>description: <%= weatherItem.sys.sunrise %></p>
+                        </li>
+                        <li>
+                            <p>Humedad: <%= weatherItem.main.humidity %>%</p>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div id="windy"  class="container max-auto rounded shadow" style="width: 600px; height: 300px;"></div>
+
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    <div class="row blur-effect sombra pronostico rounded mt-3 pt-4">
+        <div class="col-1"></div>
+        <div class="col-2">
+            <div class="temperatura-info">
+                <ul class="info-clima">
+                    <li>
+                        <h4 class="text-light">lun</h4>
+                    </li>
+                    <li>
+                        <p>Sensación térmica: 28°C</p>
+                    </li>
+                    <li>
+                        <p>tempMin: 26°C</p>
+                    </li>
+                    <li>
+                        <p>tempMax: 30°C</p>
+                    </li>
+                    <li>
+                        <p>Humedad: 75%</p>
+                    </li>
+                    <li>
+                        <p>descripción: Nublado</p>
+                    </li>
+                    <li>
+                        <p>Punto de rocio: 29°C</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="temperatura-info">
+                <ul class="info-clima">
+                    <li>
+                        <h4 class="text-light">mar</h4>
+                    </li>
+                    <li>
+                        <p>Sensación térmica: 28°C</p>
+                    </li>
+                    <li>
+                        <p>tempMin: 26°C</p>
+                    </li>
+                    <li>
+                        <p>tempMax: 30°C</p>
+                    </li>
+                    <li>
+                        <p>Humedad: 75%</p>
+                    </li>
+                    <li>
+                        <p>descripción: Nublado</p>
+                    </li>
+                    <li>
+                        <p>Punto de rocio: 29°C</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="temperatura-info">
+                <ul class="info-clima">
+                    <li>
+                        <h4 class="text-light">mié</h4>
+                    </li>
+                    <li>
+                        <p>Sensación térmica: 28°C</p>
+                    </li>
+                    <li>
+                        <p>tempMin: 26°C</p>
+                    </li>
+                    <li>
+                        <p>tempMax: 30°C</p>
+                    </li>
+                    <li>
+                        <p>Humedad: 75%</p>
+                    </li>
+                    <li>
+                        <p>descripción: Nublado</p>
+                    </li>
+                    <li>
+                        <p>Punto de rocio: 29°C</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="temperatura-info">
+                <ul class="info-clima">
+                    <li>
+                        <h4 class="text-light">jue</h4>
+                    </li>
+                    <li>
+                        <p>Sensación térmica: 28°C</p>
+                    </li>
+                    <li>
+                        <p>tempMin: 26°C</p>
+                    </li>
+                    <li>
+                        <p>tempMax: 30°C</p>
+                    </li>
+                    <li>
+                        <p>Humedad: 75%</p>
+                    </li>
+                    <li>
+                        <p>descripción: Nublado</p>
+                    </li>
+                    <li>
+                        <p>Punto de rocio: 29°C</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="temperatura-info">
+                <ul class="info-clima">
+                    <li>
+                        <h4 class="text-light">vie</h4>
+                    </li>
+                    <li>
+                        <p>Sensación térmica: 28°C</p>
+                    </li>
+                    <li>
+                        <p>tempMin: 26°C</p>
+                    </li>
+                    <li>
+                        <p>tempMax: 30°C</p>
+                    </li>
+                    <li>
+                        <p>Humedad: 75%</p>
+                    </li>
+                    <li>
+                        <p>descripción: Nublado</p>
+                    </li>
+                    <li>
+                        <p>Punto de rocio: 29°C</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">Pronóstico del Tiempo para <%= weatherItem.name %></h1>
+    <div class="row">
+        <% Object.keys(forecast).forEach(day => { %>
+            <div class="col-2">
+              <div class="card-header">
+                <h5><%= new Date(day).toLocaleDateString('es-ES', { weekday: 'long' }) %></h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <% forecast[day].forEach(hourly => { %>
+                  <li class="list-group-item">
+                    <strong><%= hourly.dt_txt.split(' ')[1] %>:</strong>
+                    <img src="http://openweathermap.org/img/wn/<%= hourly.weather[0].icon %>@2x.png" alt="<%= hourly.weather[0].description %>">
+                    <%= hourly.main.temp %>°C - <%= hourly.weather[0].description %>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          <% }) %>
+    </div>
+        
+    
+      </div>
+
+    <!-- <div id="map" class="container shadow" style="width: 40vw; height: 40vh;"></div> -->
+</body>
+    
+    <script>
+        function convertirTiempo(UNIX_timestamp){
+            var t = new Date(UNIX_timestamp * 1000);
+            var hora = t.getHours();
+            return hora;
+        }
+        const diasSemana = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb']
+
+        async function convertirDia(UNIX_timestamp){
+            var t = new Date(UNIX_timestamp * 1000);
+            var dia = t.getDay();
+
+            return diasSemana[dia];
+        }
+
+
+        async function mostrarDia() {
+            const diasUnicos = new Set();
+            const dia_semana = document.getElementById('dias-semana');
+            for (let i = 0; i < forecastData.list.length; i++) {
+                try {
+                    let diaActual = await convertirDia(forecastData.list[i].dt);
+                    
+                    if (!diasUnicos.has(diaActual)){
+                        diasUnicos.add(diaActual)
+                        
+                        dia_semana.append(diaActual + " ")
+                    }
+                } catch (error){
+                    console.error("Error al convertir el dia")
+                }
+        }
+        }
+
+        mostrarDia();
+        
+
+        //  for (let i = 0; i < 3; i++) {
+            
+        //     console.log(convertirDia(forecastData.list[i].dt));
+        // }
+        
+
+
+
+        let horaActual = convertirTiempo("<%= weatherItem.dt %>")
+
+        let iconoClima = document.getElementById("condicion-actual-img");
+        //console.log(horaActual);
+        let condicionActualTxt = document.getElementById("condicion-actual");
+        let idCondicion = "<%= weatherItem.weather[0].id %>"
+        //console.log(idCondicion)
+        if(idCondicion >= 200 && idCondicion <= 232){
+            condicionActualTxt.innerHTML = "Tormenta";
+            document.body.style.backgroundImage = 'url(/images/Tormenta.jpeg)'
+            iconoClima.setAttribute('src', 'https://openweathermap.org/img/wn/11d@2x.png')
+        } else if (idCondicion >= 300 && idCondicion <= 531){
+            condicionActualTxt.innerHTML = "Lluvia";
+            document.body.style.backgroundImage = 'url(/images/Lluvia.jpeg)'
+            if(horaActual >= 6 && horaActual <= 18){
+                iconoClima.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png')
+            } else if(horaActual <= 6 || horaActual >= 18){
+                iconoClima.setAttribute('src', 'https://openweathermap.org/img/wn/10n@2x.png')
+            }
+        }
+        const options = {
+            key: 'H6QzvguNyd8dt2cNaOcGFU52W4cBdMX6',
+
+            lat: "<%= weatherItem.coord.lat %>",
+            lon: "<%= weatherItem.coord.lon %>",
+            zoom: 8
+        };
+
+        windyInit(options, windyAPI =>{
+
+            const {map} = windyAPI;
+        })
+    </script>
+</body>
+</html>
